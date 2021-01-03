@@ -1,0 +1,46 @@
+#container {
+  /* float: left; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+#slide {
+  float: left;
+  width: 1000px;
+  height: 250px;
+  overflow: hidden;
+  z-index: 2;
+}
+#slide ul {
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+#slide ul li {
+  display: block;
+}
+
+#slide_box li img {
+  border-radius: 3%;
+  width: 250px;
+  height: 250px;
+}
+.icon {
+  width: 40px;
+  opacity: 0.6;
+  position: relative;
+  z-index: 3;
+}
+.icon img {
+  width: 50px;
+  cursor: pointer;
+}
+.icon.leftbtn {
+  visibility: hidden;
+  left: 50px;
+}
+.icon.rightbtn {
+  left: -50px;
+  z-index: 3;
+}
