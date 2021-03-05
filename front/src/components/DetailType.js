@@ -41,10 +41,6 @@ function DetailType(props) {
       <div style={{ position: "relative", top: "-20px", zIndex: "10" }}>
         <div
           style={{
-            // display: "flex",
-            // justifyContent: "center",
-            // alignItems: "center",
-
             border: "1px solid black",
             width: "800px",
             height: "160px",

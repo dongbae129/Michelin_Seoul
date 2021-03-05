@@ -7,7 +7,10 @@ import React, {
 } from "react";
 import queryString from "query-string";
 import { useDispatch, useSelector } from "react-redux";
-import { GET_RESTARAURANT_INFO_REQUEST } from "../reducers/restaurant";
+import {
+  // GET_RESTARAURANT_INFO_REQUEST,
+  SEARCH_TARGETS_REQUEST,
+} from "../reducers/restaurant";
 import { stick, func_tag } from "./lottostick.js";
 import "../css/restaurantball.css";
 import { Link } from "react-router-dom";
@@ -19,16 +22,21 @@ const Restaurant = (props) => {
   const [opentest, setOpentest] = useState(false);
   const reftest1 = useRef([]);
   const testref = useRef(0);
-
   const moveballboxTestref = useRef(0);
   const moveballTestref = useRef(0);
   function tesref() {
     testref.current += 1;
   }
   tesref();
+  let query;
+  if (props.search) {
+    query = queryString.parse(props.props.location.search);
+  } else {
+    query = queryString.parse(props.location.search);
+  }
 
-  const query = queryString.parse(props.location.search);
   const { restaurant } = useSelector((state) => state.restaurant);
+
   const dispatch = useDispatch();
   const lottoNum = useCallback((array = [], num, max) => {
     if (!array || null) {
@@ -91,24 +99,16 @@ const Restaurant = (props) => {
 
   useEffect(() => {
     dispatch({
-      type: GET_RESTARAURANT_INFO_REQUEST,
+      // type: GET_RESTARAURANT_INFO_REQUEST,
+      type: SEARCH_TARGETS_REQUEST,
       data: query.type,
     });
+    return () => setBoxtop(false);
   }, [query.type, dispatch]);
   useEffect(() => {
-    // if (restaurant.length !== 0) check(restaurant.length);
-    // let checkmemo = useMemo(() => check(restaurant.length), []);
-    // setRandom(checkmemo);
-    if (restaurant.length !== 0) {
-      // let checkmemo = useMemo(() => check(restaurant.length), [
-      //   restaurant.length,
-      // ]);
-      // setRandom(checkmemo);
-    }
-    // console.log(randomstate, "&&");
-    // if (restaurant.length !== 0) setRandom(check(restaurant.length));
     timetest();
   }, []);
+
   let checkmemo = useMemo(() => check(restaurant.length), [
     check,
     restaurant.length,
@@ -132,11 +132,11 @@ const Restaurant = (props) => {
   useEffect(() => {
     if (restaurant.length === 0) return;
     opentestcallback();
-  }, [restaurant.length]);
+  }, []);
 
   const sticktest = useMemo(() => {
     return stick(reftest1.current);
-  }, [reftest1.current]);
+  }, []);
   let viewtest = [];
   let stickarrtest = sticktest;
   viewtest = [...stickarrtest];
@@ -212,7 +212,7 @@ const Restaurant = (props) => {
     return arrTest;
   }, [moveballboxTest]);
 
-  let bb = useMemo(() => moveballTest(), [restaurant.length]);
+  let bb = useMemo(() => moveballTest(), [restaurant]);
 
   const randomBall = () => {
     setBoxtop(true);
@@ -220,6 +220,7 @@ const Restaurant = (props) => {
   };
 
   let customtest = [];
+
   bb.map((v, i) => {
     let test = {};
     v.map((v, i) => {
@@ -237,7 +238,6 @@ const Restaurant = (props) => {
   });
 
   return (
-    // <ShowingRestaurant />
     <div className="cubetopwrap">
       <div className={opentest ? "container hidden" : "container"}>
         <div className="cube">
@@ -273,7 +273,6 @@ const Restaurant = (props) => {
               className={ballmoveTest ? "cubeinball final" : "cubeinball"}
               key={i}
               style={{ ...customtest[i], ...moveballpoint[i] }}
-              onClick={(e) => console.log(e.target)}
             >
               <div className="layer l-large l-center star-small">
                 <img src="/images/small.png" alt="" />
@@ -325,34 +324,6 @@ const Restaurant = (props) => {
           ))}
       </div>
     </div>
-    // <div
-    //   style={{
-    //     display: "flex",
-    //     width: "900px",
-    //     flexWrap: "wrap",
-    //     margin: "0 auto",
-    //   }}
-    // >
-    //   {restaurant.map &&
-    //     restaurant.map((v, i) => (
-    //       <Card
-    //         key={i}
-    //         hoverable
-    //         style={{ width: "204px", margin: "10px" }}
-    //         cover={
-    //           <Link to={`/restaurant/detailinfo?name=${v.name}`}>
-    //             <img
-    //               style={{ width: "100%", height: "225px" }}
-    //               alt="example"
-    //               src={`http://localhost:8010/${v.Images[0].src}`}
-    //             />
-    //           </Link>
-    //         }
-    //       >
-    //         <Meta title={v.name} description={v.DetailInfo.description} />
-    //       </Card>
-    //     ))}
-    // </div>
   );
 };
 

@@ -52,9 +52,7 @@ const foodType = ["korea", "spanish", "sushi", "innovative", "contemporary"];
 //     });
 //   return a;
 // };
-const typeRending = (e) => {
-  let target = e.target;
-};
+const typeRending = () => {};
 function Home() {
   const [search, setSearch] = useState("");
   const searchInput = useRef();
@@ -73,10 +71,10 @@ function Home() {
     // e.preventDefault();
     if (e.keyCode === 13) {
       if (search === "") return searchInput;
-      dispatch({
-        type: SEARCH_TARGETS_REQUEST,
-        data: search,
-      });
+      // dispatch({
+      //   type: SEARCH_TARGETS_REQUEST,
+      //   data: search,
+      // });
       searchInput.current.click();
     }
   };
@@ -111,7 +109,7 @@ function Home() {
           }}
         />
         {/* <div style={{ height: "35px" }}> */}
-        <Link to={`/restaurant/search?search=${search}`}>
+        <Link to={`/restaurant/search?type=${search}`}>
           <div
             ref={searchInput}
             style={{
@@ -173,13 +171,6 @@ function Home() {
         <div className="snow3"></div>
       </section>
       <div>
-        {/* {Array(6)
-          .fill(0)
-          .map((v, i) => (
-            <div className={`trailtrees tree${i + 1}`} style={{ "--i": i + 1 }}>
-              
-            </div>
-          ))} */}
         <div className="trainrail">
           <img src="/images/trainrail.png" alt="" />
         </div>

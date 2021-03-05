@@ -28,6 +28,7 @@ export const SEARCH_TARGETS_FAILURE = "SEARCH_TARGETS_FAILURE";
 
 export const REMOVE_IMAGE_FRONT = "REMOVE_IMAGE_FRONT";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_RESTARAURANT_INFO_REQUEST:
