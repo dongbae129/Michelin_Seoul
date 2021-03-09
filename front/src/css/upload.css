@@ -1,0 +1,119 @@
+.uploadwrap {
+  background: #e6fcf5;
+  z-index: 0;
+  width: 70vw;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.uploadwrap form {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uploadwrap form > div:nth-child(1) {
+  width: 70%;
+  height: 70%;
+  background: white;
+}
+.uploadwrap form > div:nth-child(1) > .infoinput_under {
+  width: 100%;
+  padding-left: 12.5%;
+  margin-top: 20px;
+}
+.uploadwrap form > div:nth-child(1) button {
+  margin-left: 13%;
+  margin-top: 10px;
+  width: 80px;
+  height: 30px;
+  background: #e3fafc;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.uploadwrap form > div:nth-child(2) {
+  width: 25%;
+  height: 50%;
+  background: #b2f2bb;
+  transform: translateX(-20%);
+}
+.uploadwrap form > div:nth-child(2) button {
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  /* border-radius: 10px; */
+  border: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background: #ebfbee;
+}
+.infoinput {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  margin-top: 10px;
+}
+.infoinput:first-child {
+  margin-top: 30px;
+}
+/* .infoinput div {
+  width: 50%;
+} */
+label {
+  position: relative;
+}
+.infoinput_under {
+  position: relative;
+  width: 25%;
+}
+
+.infoinput_under span {
+  position: absolute;
+  left: 0;
+  top: -8px;
+  transition: 0.5s;
+  font-family: "Nanum Pen Script";
+  font-size: 16px;
+}
+.infoinput_under.last span {
+  left: 12.5%;
+  top: -20px;
+}
+.infoinput_under input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.infoinput_under input:valid ~ span,
+.infoinput_under input:focus ~ span {
+  transform: translateY(-15px);
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.infoinput_under textarea {
+  width: 70%;
+  resize: none;
+  outline: none;
+  /* border-bottom: 1px solid black; */
+}
+
+.showimgwrap {
+  overflow-y: scroll;
+}
+.showimgwrap > div > div {
+  width: 50%;
+  height: 40%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 6px;
+  z-index: 3;
+}
+.showimgwrap div img {
+  width: 100%;
+  height: 100%;
+}

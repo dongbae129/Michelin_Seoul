@@ -136,9 +136,11 @@ const Restaurant = (props) => {
 
   const sticktest = useMemo(() => {
     return stick(reftest1.current);
-  }, []);
+  }, [reftest1.current]);
   let viewtest = [];
   let stickarrtest = sticktest;
+  console.log(reftest1.current, "11");
+  console.log(stickarrtest, "@");
   viewtest = [...stickarrtest];
 
   const moveballboxTest = useCallback(() => {
