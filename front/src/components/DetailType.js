@@ -8,6 +8,7 @@ import { MdAccessTime, MdDescription } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 import ImageSlide from "./ImageSlide";
 import { func_tag } from "./ShowingRestaurant";
+import "../css/detailtype.css";
 function DetailType(props) {
   const { restaurant } = useSelector((state) => state.restaurant);
   let query = queryString.parse(props.location.search);
@@ -26,49 +27,18 @@ function DetailType(props) {
   return (
     <div style={{ margin: "0 auto", width: "1100px", position: "relative" }}>
       <ImageSlide />
-      <div
-        style={{
-          width: "1000px",
-          margin: "0 auto",
-          background: "#f8f9fa",
-          height: "100vh",
-          position: "absolute",
-          top: "0",
-          left: "50px",
-          zIndex: "0",
-        }}
-      ></div>
-      <div style={{ position: "relative", top: "-20px", zIndex: "10" }}>
-        <div
-          style={{
-            border: "1px solid black",
-            width: "800px",
-            height: "160px",
-            margin: "0 auto",
-            textAlign: "center",
-            background: "white",
-            marginBottom: "1rem",
-            boxShadow: "1px 1px 11px 1px rgba(90,90,90,1)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              height: "100%",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
+      <div className="detailWrap"></div>
+      <div>
+        <div className="detail-header">
+          <div>
             <div>
-              <strong style={{ fontSize: "32px", marginRight: "10px" }}>
-                {restaurant && restaurant.name}
-              </strong>
-              <span style={{ color: "#9a9a9a" }}>
+              <strong>{restaurant && restaurant.name}</strong>
+              <span className="rescountry">
                 {restaurant && restaurant.foodtype}
               </span>
             </div>
             <div>
-              <div style={{ margin: "0 auto", width: "100px" }}>
+              <div>
                 <img
                   src={
                     restaurant.star === 3
@@ -91,68 +61,49 @@ function DetailType(props) {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            border: "1px solid black",
-            width: "800px",
-            height: "600px",
-            margin: "0 auto",
-            boxShadow: "1px 1px 11px 1px rgba(90,90,90,1)",
-            background: "white",
-          }}
-        >
-          <div
-            style={{
-              textAlign: "center",
-              color: "#74c0fc",
-              fontSize: "1.2rem",
-            }}
-          >
-            {restaurant.tag && func_tag(restaurant)}
-          </div>
-          <div style={{ display: "flex", marginTop: "12px" }}>
+        <div className="detail-main">
+          <div>{restaurant.tag && func_tag(restaurant)}</div>
+          <div className="detail_main-info">
             <AiOutlinePhone
               style={{
                 fontSize: "20px",
                 marginRight: "12px",
-                // marginTop: "4px",
               }}
               className="icon"
             />
             <div>
-              {restaurant.DetailInfo && restaurant.DetailInfo.phonenumber}
+              {restaurant.detailinfo && restaurant.detailinfo.phonenumber}
             </div>
           </div>
-          <div style={{ display: "flex", marginTop: "12px" }}>
+          <div className="detail_main-info">
             <GoLocation
               style={{
                 fontSize: "20px",
                 marginRight: "12px",
-                // marginTop: "4px",
               }}
               className="icon"
             />
-            <div>{restaurant.DetailInfo && restaurant.DetailInfo.location}</div>
+            <div>{restaurant.detailinfo && restaurant.detailinfo.location}</div>
           </div>
-          <div style={{ display: "flex", marginTop: "12px" }}>
+          <div className="detail_main-info">
             <MdAccessTime
               style={{ fontSize: "20px", marginRight: "12px" }}
               className="icon"
             />
-            <span style={{ marginRight: "30px" }}>
-              {restaurant.DetailInfo && restaurant.DetailInfo.weekday}
+            <span className="detail_main-info-weekday">
+              {restaurant.detailinfo && restaurant.detailinfo.weekday}
             </span>
             <span>
-              {restaurant.DetailInfo && restaurant.DetailInfo.weekend}
+              {restaurant.detailinfo && restaurant.detailinfo.weekend}
             </span>
           </div>
-          <div style={{ display: "flex", marginTop: "12px" }}>
+          <div className="detail_main-info">
             <MdDescription
               style={{ fontSize: "20px", marginRight: "12px" }}
               className="icon"
             />
-            <div style={{ width: "700px" }}>
-              {restaurant.DetailInfo && restaurant.DetailInfo.description}
+            <div className="detail_main-info-desc">
+              {restaurant.detailinfo && restaurant.detailinfo.description}
             </div>
           </div>
         </div>

@@ -10,8 +10,6 @@ import "./css/app.css";
 function App() {
   return (
     <BrowserRouter>
-      {/* <div className="left-diagonal"></div>
-      <div className="right-diagonal"></div> */}
       <div
         style={{
           display: "flex",
@@ -24,8 +22,6 @@ function App() {
           <Link
             to="/"
             style={{
-              // lineHeight: "50px",
-              // verticalAlign: "middle",
               marginLeft: "10px",
             }}
           >
@@ -39,7 +35,6 @@ function App() {
         <div
           style={{
             marginLeft: "40px",
-            // border: "1px solid black",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -65,10 +60,6 @@ function App() {
           </Link>
         </div>
       </div>
-
-      {/* <hr /> */}
-      {/* <br />
-      <br /> */}
 
       <Route path="/" component={Home} exact />
       <Route path="/upload" component={Upload} />

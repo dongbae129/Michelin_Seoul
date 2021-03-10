@@ -5,6 +5,7 @@ import {
   REMOVE_IMAGE_FRONT,
   UPLOAD_RESTARAURANT_INFO_REQUEST,
 } from "../reducers/restaurant";
+import "../css/upload.css";
 import axios from "axios";
 const Upload = (props) => {
   const [name, setName] = useState("");
@@ -60,10 +61,10 @@ const Upload = (props) => {
   }, []);
   const onSetTag = useCallback((e) => {
     setTag(e.target.value);
-  });
+  }, []);
   const onSetLocation = useCallback((e) => {
     setLocation(e.target.value);
-  });
+  }, []);
 
   const onSubmit = () => {
     dispatch({
@@ -96,114 +97,66 @@ const Upload = (props) => {
     });
   };
   return (
-    <div
-      style={{
-        background: "#e6fcf5",
-        zIndex: 0,
-        width: "800px",
-        margin: "0 auto",
-        padding: "20px",
-      }}
-    >
-      <form
-        style={{
-          width: "600px",
-          height: "689px",
-          margin: "0 auto",
-          display: "flex",
-        }}
-        onFinish={onSubmit}
-      >
-        <div
-          style={{
-            width: "50%",
-            marginRight: "2rem",
-            // border: "1px solid black",
-            borderRadius: "3px",
-            background: "white",
-          }}
-        >
-          <div>
-            <label>
-              이름
-              <br />
+    <div className="uploadwrap">
+      <form>
+        <div>
+          <div className="infoinput">
+            <div className="infoinput_under">
               <input value={name} onChange={onSetName} required />
-            </label>
-          </div>
-          <div>
-            <label>
-              별 개수
-              <br />
+              <span>이름</span>
+            </div>
+            <div className="infoinput_under">
               <input value={star} onChange={onSetStar} required />
-            </label>
+              <span>별 개수</span>
+            </div>
           </div>
-          <div>
-            <label>
-              업종
-              <br />
+          <div className="infoinput">
+            <div className="infoinput_under">
               <input value={type} onChange={onSetType} required />
-            </label>
+              <span>업종</span>
+            </div>
+            <div className="infoinput_under">
+              <input value={tag} onChange={onSetTag} required />{" "}
+              <span>태그</span>
+            </div>
           </div>
-          <div>
-            <label>
-              태그
-              <br />
-              <input value={tag} onChange={onSetTag} required />
-            </label>
+          <div className="infoinput">
+            <div className="infoinput_under">
+              <input value={phoneNum} onChange={onSetPhoneNum} required />{" "}
+              <span>전화번호</span>
+            </div>
+            <div className="infoinput_under">
+              <input value={location} onChange={onSetLocation} required />{" "}
+              <span>위치</span>
+            </div>
           </div>
-          <div>
-            <label>
-              전화번호
-              <br />
-              <input value={phoneNum} onChange={onSetPhoneNum} required />
-            </label>
-          </div>
-          <div>
-            <label>
-              위치
-              <br />
-              <input value={location} onChange={onSetLocation} required />
-            </label>
-          </div>
-          <div>
-            <label>
-              평일
-              <br />
-              <input value={weekday} onChange={onSetWeekday} required />
-            </label>
-          </div>
-          <div>
-            <label>
-              주말
-              <br />
-              <input value={weekend} onChange={onSetWeekend} required />
-            </label>
-          </div>
-          <div>
-            <label>
-              설명
-              <br />
-              <textarea
-                rows="8"
-                value={descrip}
-                onChange={onSetDescrip}
-                required
-              />
-            </label>
+          <div className="infoinput">
+            <div className="infoinput_under">
+              <input value={weekday} onChange={onSetWeekday} required />{" "}
+              <span>평일</span>
+            </div>
+            <div className="infoinput_under">
+              <input value={weekend} onChange={onSetWeekend} required />{" "}
+              <span>주말</span>
+            </div>
           </div>
 
-          <button type="primary" htmlType="submit">
-            등록
+          <div className="infoinput_under last">
+            <textarea
+              rows="8"
+              value={descrip}
+              onChange={onSetDescrip}
+              required
+            />
+            <span>설명</span>
+          </div>
+
+          {/* <button type="primary" htmlType="submit"> */}
+          <button type="submit" onClick={onSubmit}>
+            send
           </button>
         </div>
-        <div
-          style={{
-            // border: "1px solid black",
-            width: "50%",
-            background: "white",
-            overflow: "auto",
-          }}
-        >
+        <div className="showimgwrap">
           <input
             type="file"
             multiple
@@ -211,25 +164,11 @@ const Upload = (props) => {
             hidden
             onChange={onChangeImage}
           />
-          <button onClick={onClickImageInput}>이미지</button>
+          <button onClick={onClickImageInput}>이미지 등록</button>
           <div onClick={removeImage}>
             {imagePaths.map((v, i) => (
-              <div
-                key={i}
-                style={{
-                  width: "50%",
-                  height: "141px",
-                  display: "inline-block",
-                  boxSizing: "border-box",
-                  padding: "6px",
-                  zIndex: "3",
-                }}
-              >
-                <img
-                  style={{ width: "100%", height: "100%" }}
-                  src={`http://localhost:8010/${v}`}
-                  alt="img"
-                />
+              <div key={i}>
+                <img src={`http://localhost:8010/${v}`} alt="img" />
               </div>
             ))}
           </div>

@@ -139,8 +139,7 @@ const Restaurant = (props) => {
   }, [reftest1.current]);
   let viewtest = [];
   let stickarrtest = sticktest;
-  console.log(reftest1.current, "11");
-  console.log(stickarrtest, "@");
+
   viewtest = [...stickarrtest];
 
   const moveballboxTest = useCallback(() => {
@@ -309,7 +308,7 @@ const Restaurant = (props) => {
                       <div className="cubeball_img">
                         <img
                           alt="example"
-                          src={`http://localhost:8010/${v.Images[0].src}`}
+                          src={`https://27.96.135.106:8010/${v.images[0].src}`}
                         />
                       </div>
                       <div className="resinfo_wrap">

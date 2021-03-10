@@ -10,12 +10,10 @@ function lottoNum(array, num) {
     if (array.length < num) {
       return lottoNum(array, num);
     }
-    console.log(array, "TEst");
     return array;
   }
 }
 function arrcheck(arrX, arrY, point) {
-  console.log(point, "@@@");
   while (true) {
     for (let i = 0; i < arrX.length; i++) {
       for (let j = 0; j < arrY.length; j++) {
@@ -46,6 +44,5 @@ function check() {
     point.push({ x: arrX[pp], y: arrY[pp] });
   }
   arrcheck(arrX, arrY, point);
-  console.log(point, "PP");
 }
 check();
