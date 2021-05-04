@@ -1,6 +1,6 @@
 About Michelin_2020_renwer.
 
-https://bdhportfolio.ga/#moveproject
+https://badportfolio.xyz/#moveproject
 해당 사이트에서 데모사이트로 이동할수 있습니다.
 
 -설치방법-
