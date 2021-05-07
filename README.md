@@ -1,63 +1,90 @@
-About Michelin_2020_renwer.
+<h1>Michelin_2020_renwer</h1>
 
-https://baeportfolio.xyz/#moveproject
-해당 사이트에서 데모사이트로 이동할수 있습니다.
-
--설치방법-
-
-//먼저 git,node,mysql이 설치되어 있어야 한다.
-
-1.설치하고자 하는 폴더위치에 git clone https://github.com/dongbae129/Michelin_2020_renwer.git
-
-2.git clone 후 back,front 폴더에서 각각 터미널에서 npm i 명령어를 입력한다.(모듈 설치하는데 시간이 꽤 걸립니다)
-
-3.back폴더로 이동하여 .env파일을 생성하여 아래의 내용을 작성한다.
-
-DB_PASSWORD=mysql 비밀번호를 작성한다.
-ex)DB_PASSWORD=123456
-
-
-4. 터미널에서 mysql에 접속 후 create database foodrecommend;를 입력하여 해당이름의 데이터베이스를 생성한다.
-
-5. back폴더에서는 npm run dev, front폴더에서는 npm stat로 웹사이트를 실행할수 있다.(자세한 script는 package.json참고)
-
-※p.s front 폴더에서 서버통신하는 코드에서 주소를 localhost로 변경하길 바랍니다.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36911316/117452900-4481d980-af7f-11eb-81c5-f43f44bb5af5.png">  
+</p>
+<p align="center">
+  <span><img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white"></span>
+  <span><img src="https://img.shields.io/badge/-Redux--Saga-brightgreen?logo=redux-saga"></span>
+  <span><img src="https://img.shields.io/badge/-Mysql-blue?logo=mysql&logoColor=black"></span>
+  <span><img src="https://img.shields.io/badge/-Express-gray?logo=javascript&logoColor=white"></span>
+</p>
 
 
 
--프로젝트 소개-
+  https://baeportfolio.xyz/#moveproject<br> 해당 사이트에서 데모사이트로 이동할수 있습니다.
 
-
-제목 : 별들의 여행.
-
-소개 : 2020년 대한민국/서울 미슐랭 가이드 기준 1~3스타를 받은 식당 소개 사이트.
-
-기능 : 검색, 등록, 조회.
-
-사용기술 : React, Redux, Mysql, Node.
-
-
-
+  <h2>:memo: Michelin_2020_renwer 서비스 소개</h2>
+  <h3>2020년 서울 미슐랭 1~3스타 레스토랑 소개 사이트 입니다.</h3>
+  <h3>🔍 검색기능</h3>
+  <blockquote>
+    <ul>
+      <li>해쉬태크 기준 검색제공</li>
+    </ul>
+  </blockquote>
+  <h3>:stew: 음식 테마별 레스토랑 소개</h3>
+  
+  <h3>:fork_and_knife: 레스토랑 디테일</h3>
+  
+  <h2>⚙️ 설치방법</h2>
+  <blockquote>
+    <ul>
+      <li><h4>1. 기본설정</h4></li>
+      <blockquote>
+        <li>1-1. 설치하고자 하는 컴퓨터에 git, node, mysql이 설치되어 있어야 합니다.</li>
+        <li>1-2. 터미널에서 설치하고자 하는 폴더에  git clone https://github.com/dongbae129/Michelin_2020_renwer.git 입력.</li>
+        <li>1-3. back, fornt 폴더에서 각각 터미널에 npm i 명령어로 모듈 설치(front는 설치시간이 꽤 걸립니다).</li>
+      </blockquote>
+      <li><h4>2. back폴더 설정</h4></li>
+      <blockquote>
+        <ul>          
+          <li>2-2. cmd에서 mysql -u root -p 를 입력하여 mysql 접속</li>
+          <li>2-3. create database foodrecommend; 를 입력하여 해당이름의 DB생성</li>
+          <li>2-4. uploads폴더 생성(사진보관 폴더)</li>
+          <li>2-5. 터미널에 npm run dev 를 입력하여 서버구동 확인. (자세한 script는 package.json 참고)</li>
+        </ul>
+      </blockquote>
+      <li><h4>3. front폴더 설정</h4></li>
+      <blockquote>
+        <ul>
+          <li>3-1. 서버와 통신하는 주소를 서버주소로 변경해주세요. ex)localhost:8010(back-server 주소:포트)</li>
+        </ul>
+      </blockquote>
+    </ul>
+  </blockquote>
+  <h2>:pushpin: 주요기능</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>메인페이지</th>
+        <th>식당 업로드</th>
+        <th>테마별 식당 모음</th>
+        <th>식당 디테일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          
 ![K-005](https://user-images.githubusercontent.com/36911316/113401509-6adfb280-93de-11eb-86ee-98872c10ea2d.png)
--main페이지 이며, 상단에서 원하는 키워드로 검색을 할수있으며 5가지 음식타입중에 선택하여 들어갈수 있다-
-
-
-
-
-![K-007](https://user-images.githubusercontent.com/36911316/113401692-c14cf100-93de-11eb-8a06-981c4f48821b.png)
--main에서 검색 또는 클릭으로 들어올시 해당 타입에 대한 식당을 찾을수 있으며 해당 검정별에 마우스를 올리면 대표사진,이름,해쉬태그 정보를 확인할수 있다-
-
-
-
-
-![K-008](https://user-images.githubusercontent.com/36911316/113401885-1852c600-93df-11eb-9461-d9e2020418f9.png)
--식당 상세정보 페이지이다. 이미지 슬라이드와 해당 식당의 상세 정보를 확인할수 있다-
-
-
-
+        </td>
+        <td>
 
 ![K-009](https://user-images.githubusercontent.com/36911316/113401979-46380a80-93df-11eb-942b-083e77179b69.png)
--식당을 이미지와 같이 등록할수 있다-
+</td>
+        <td>
 
+![K-007](https://user-images.githubusercontent.com/36911316/113401692-c14cf100-93de-11eb-8a06-981c4f48821b.png)
+</td>
+        <td>
 
+![K-008](https://user-images.githubusercontent.com/36911316/113401885-1852c600-93df-11eb-9461-d9e2020418f9.png)
 
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>:pushpin: 프로세스 흐름</h2>
+
+![process](https://user-images.githubusercontent.com/36911316/117455132-d7237800-af81-11eb-9b95-1eabc85d4435.png)
