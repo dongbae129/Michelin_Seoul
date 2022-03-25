@@ -27,17 +27,20 @@ app.use(
     name: "foodRecommend",
   })
 );
-app.all("/*", (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-
-  next();
+app.use("/", (req, res) => {
+  res.send("백엔드 정상 작동");
 });
+// app.all("/*", (req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
+//   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+
+//   next();
+// });
 app.use("/api/restaurant", restaurantAPIRouter);
 
 app.listen(prod ? process.env.PORT : 8010, () => {
