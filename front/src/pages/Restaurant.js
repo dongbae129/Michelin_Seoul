@@ -109,10 +109,10 @@ const Restaurant = (props) => {
     timetest();
   }, []);
 
-  let checkmemo = useMemo(() => check(restaurant.length), [
-    check,
-    restaurant.length,
-  ]);
+  let checkmemo = useMemo(
+    () => check(restaurant.length),
+    [check, restaurant.length]
+  );
   reftest1.current = checkmemo;
 
   const timetest = () => {
@@ -308,7 +308,7 @@ const Restaurant = (props) => {
                       <div className="cubeball_img">
                         <img
                           alt="example"
-                          src={`https://27.96.135.106:8010/${v.images[0].src}`}
+                          src={`http://localhost:8010/${v.Images[0].src}`}
                         />
                       </div>
                       <div className="resinfo_wrap">

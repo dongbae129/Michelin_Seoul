@@ -58,6 +58,9 @@
   display: flex;
   margin-top: 12px;
 }
+.detail_main-info svg {
+  width: 40px;
+}
 .detail_main-info-weekday {
   margin-right: 30px;
 }

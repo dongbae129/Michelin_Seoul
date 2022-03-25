@@ -27,6 +27,7 @@ export const SEARCH_TARGETS_SUCCESS = "SEARCH_TARGETS_SUCCESS";
 export const SEARCH_TARGETS_FAILURE = "SEARCH_TARGETS_FAILURE";
 
 export const REMOVE_IMAGE_FRONT = "REMOVE_IMAGE_FRONT";
+export const RE_IMAGE_PATH = "RE_IMAGE_PATH";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, action) => {
@@ -40,6 +41,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         restaurant: [],
+      };
+    }
+    case RE_IMAGE_PATH: {
+      return {
+        ...state,
+        imagePaths: [],
       };
     }
     case GET_RESTARAURANT_INFO_SUCCESS:

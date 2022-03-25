@@ -1,9 +1,10 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   UPLOAD_IMAGES_REQUEST,
   REMOVE_IMAGE_FRONT,
   UPLOAD_RESTARAURANT_INFO_REQUEST,
+  RE_IMAGE_PATH,
 } from "../reducers/restaurant";
 import "../css/upload.css";
 import axios from "axios";
@@ -23,6 +24,11 @@ const Upload = (props) => {
 
   const imageInput = useRef();
 
+  useEffect(() => {
+    dispatch({
+      type: RE_IMAGE_PATH,
+    });
+  }, []);
   const onChangeImage = useCallback((e) => {
     const imageData = new FormData();
     [].forEach.call(e.target.files, (f) => {

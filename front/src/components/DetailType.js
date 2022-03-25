@@ -72,7 +72,7 @@ function DetailType(props) {
               className="icon"
             />
             <div>
-              {restaurant.detailinfo && restaurant.detailinfo.phonenumber}
+              {restaurant.DetailInfo && restaurant.DetailInfo.phonenumber}
             </div>
           </div>
           <div className="detail_main-info">
@@ -83,7 +83,7 @@ function DetailType(props) {
               }}
               className="icon"
             />
-            <div>{restaurant.detailinfo && restaurant.detailinfo.location}</div>
+            <div>{restaurant.DetailInfo && restaurant.DetailInfo.location}</div>
           </div>
           <div className="detail_main-info">
             <MdAccessTime
@@ -91,10 +91,10 @@ function DetailType(props) {
               className="icon"
             />
             <span className="detail_main-info-weekday">
-              {restaurant.detailinfo && restaurant.detailinfo.weekday}
+              {restaurant.DetailInfo && restaurant.DetailInfo.weekday}
             </span>
             <span>
-              {restaurant.detailinfo && restaurant.detailinfo.weekend}
+              {restaurant.DetailInfo && restaurant.DetailInfo.weekend}
             </span>
           </div>
           <div className="detail_main-info">
@@ -103,7 +103,7 @@ function DetailType(props) {
               className="icon"
             />
             <div className="detail_main-info-desc">
-              {restaurant.detailinfo && restaurant.detailinfo.description}
+              {restaurant.DetailInfo && restaurant.DetailInfo.description}
             </div>
           </div>
         </div>

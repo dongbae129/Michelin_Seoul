@@ -7,7 +7,7 @@ function ImageSlide() {
   const left_btn = useRef();
   const right_btn = useRef();
   const slide_max_count =
-    restaurant.images && Math.floor(restaurant.images.length / 4);
+    restaurant.Images && Math.floor(restaurant.Images.length / 4);
   let s_itv;
   let s_count = 0;
   let s_posX = 0;
@@ -20,11 +20,9 @@ function ImageSlide() {
     }
   };
   const S_ani_L = () => {
-   
     s_itv = setInterval(frame(5), 1);
   };
   const S_ani_R = () => {
-    
     s_itv = setInterval(frame(-5), 1);
   };
   const onClickleft = (e) => {
@@ -57,21 +55,21 @@ function ImageSlide() {
   return (
     <div id="container">
       <div className="icon leftbtn" onClick={onClickleft}>
-        {restaurant.images && restaurant.images.length <= 4 ? null : (
+        {restaurant.Images && restaurant.Images.length <= 4 ? null : (
           <img src="/images/icon-left.png" alt="left-arrow" ref={left_btn} />
         )}
       </div>
       <div id="slide">
         <ul id="slide_box" ref={slide}>
-          {restaurant.images &&
-            restaurant.images.map((v, i) => (
+          {restaurant.Images &&
+            restaurant.Images.map((v, i) => (
               <li key={v + i}>
-                <img src={`http://27.96.135.106:8010/${v.src}`} alt={v.src} />
+                <img src={`http://localhost:8010/${v.src}`} alt={v.src} />
               </li>
             ))}
         </ul>
       </div>
-      {restaurant.images && restaurant.images.length > 4 ? (
+      {restaurant.Images && restaurant.Images.length > 4 ? (
         <div className="icon rightbtn" onClick={onClickright}>
           <img src="/images/icon.png" alt="right-arrow" ref={right_btn} />
         </div>
