@@ -5,7 +5,7 @@ const app = express();
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const expressSession = require("express-session");
-
+const prod = process.env.NODE_ENV === "production";
 const restaurantAPIRouter = require("./routes/restaurant");
 
 db.sequelize.sync();
@@ -40,8 +40,8 @@ app.all("/*", (req, res, next) => {
 });
 app.use("/api/restaurant", restaurantAPIRouter);
 
-app.listen("8010", () => {
+app.listen(prod ? process.env.PORT : 8010, () => {
   console.log(
-    "************************************************\n          express running on port 8010\n************************************************"
+    `************************************************\n          express running on port ${process.env.PORT}\n************************************************`
   );
 });
