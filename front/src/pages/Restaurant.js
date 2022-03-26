@@ -308,7 +308,7 @@ const Restaurant = (props) => {
                       <div className="cubeball_img">
                         <img
                           alt="example"
-                          src={`http://localhost:8010/${v.Images[0].src}`}
+                          src={`http://52.78.77.61/${v.Images[0].src}`}
                         />
                       </div>
                       <div className="resinfo_wrap">

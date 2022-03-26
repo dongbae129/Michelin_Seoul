@@ -98,7 +98,7 @@ const Upload = (props) => {
       type: REMOVE_IMAGE_FRONT,
       data: imagePaths.indexOf(a),
     });
-    return axios.delete("http://localhost:8010/api/restaurant/images", {
+    return axios.delete("http://52.78.77.61 /api/restaurant/images", {
       data: { src: a },
     });
   };
@@ -174,7 +174,7 @@ const Upload = (props) => {
           <div onClick={removeImage}>
             {imagePaths.map((v, i) => (
               <div key={i}>
-                <img src={`http://localhost:8010/${v}`} alt="img" />
+                <img src={`http://52.78.77.61 /${v}`} alt="img" />
               </div>
             ))}
           </div>

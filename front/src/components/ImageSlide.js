@@ -64,7 +64,7 @@ function ImageSlide() {
           {restaurant.Images &&
             restaurant.Images.map((v, i) => (
               <li key={v + i}>
-                <img src={`http://localhost:8010/${v.src}`} alt={v.src} />
+                <img src={`http://52.78.77.61/${v.src}`} alt={v.src} />
               </li>
             ))}
         </ul>
