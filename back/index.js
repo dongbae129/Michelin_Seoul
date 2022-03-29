@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(
     cors({
-      origin: "https://michelinseoul.xyz",
+      origin: "/michelinseoul.xyz$/",
       credentials: true,
     })
   );
