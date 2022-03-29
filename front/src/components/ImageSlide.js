@@ -64,7 +64,10 @@ function ImageSlide() {
           {restaurant.Images &&
             restaurant.Images.map((v, i) => (
               <li key={v + i}>
-                <img src={`http://52.78.77.61/${v.src}`} alt={v.src} />
+                <img
+                  src={`https://api.michelinseoul.xyz/${v.src}`}
+                  alt={v.src}
+                />
               </li>
             ))}
         </ul>

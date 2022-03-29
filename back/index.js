@@ -6,19 +6,35 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const expressSession = require("express-session");
+const hpp = require("hpp");
+const helmet = require("helmet");
+
 const prod = process.env.NODE_ENV === "production";
 const restaurantAPIRouter = require("./routes/restaurant");
 
 db.sequelize.sync();
 dotenv.config();
 
-app.use(morgan("dev"));
-app.use(
-  cors({
-    origin: true,
-    credentials: true,
-  })
-);
+if (process.env.NODE_ENV === "production") {
+  app.use(morgan("combined"));
+  app.use(hpp());
+  app.use(helmet({ contentSecurityPolicy: false }));
+  app.use(
+    cors({
+      origin: "https://michelinseoul.xyz",
+      credentials: true,
+    })
+  );
+} else {
+  app.use(morgan("dev"));
+  app.use(
+    cors({
+      origin: true,
+      credentials: true,
+    })
+  );
+}
+
 app.use("/", express.static("uploads"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -34,9 +50,7 @@ app.use(
     name: "foodRecommend",
   })
 );
-app.use("/", (req, res) => {
-  res.send("백엔드 정상 작동");
-});
+
 // app.all("/*", (req, res, next) => {
 //   res.header("Access-Control-Allow-Origin", "*");
 
