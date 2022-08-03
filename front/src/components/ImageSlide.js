@@ -67,6 +67,7 @@ function ImageSlide() {
                 <img
                   src={`https://api.michelinseoul.xyz/${v.src}`}
                   alt={v.src}
+                  crossorigin="use-credentials"
                 />
               </li>
             ))}

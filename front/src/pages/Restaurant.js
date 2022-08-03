@@ -309,6 +309,7 @@ const Restaurant = (props) => {
                         <img
                           alt="example"
                           src={`https://api.michelinseoul.xyz/${v.Images[0].src}`}
+                          crossorigin="use-credentials"
                         />
                       </div>
                       <div className="resinfo_wrap">

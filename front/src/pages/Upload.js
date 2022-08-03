@@ -72,24 +72,24 @@ const Upload = (props) => {
     setLocation(e.target.value);
   }, []);
 
-  const onSubmit = () => {
-    dispatch({
-      type: UPLOAD_RESTARAURANT_INFO_REQUEST,
-      data: {
-        name,
-        star,
-        type,
-        phoneNum,
-        weekday,
-        weekend,
-        descrip,
-        imagePaths,
-        tag,
-        location,
-      },
-    });
-
-    props.history.push("/");
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // dispatch({
+    //   type: UPLOAD_RESTARAURANT_INFO_REQUEST,
+    //   data: {
+    //     name,
+    //     star,
+    //     type,
+    //     phoneNum,
+    //     weekday,
+    //     weekend,
+    //     descrip,
+    //     imagePaths,
+    //     tag,
+    //     location,
+    //   },
+    // });
+    // props.history.push("/");
   };
 
   const removeImage = (e) => {
@@ -104,63 +104,55 @@ const Upload = (props) => {
   };
   return (
     <div className="uploadwrap">
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <div className="infoinput">
             <div className="infoinput_under">
-              <input value={name} onChange={onSetName} required />
+              <input value={name} onChange={onSetName} />
               <span>이름</span>
             </div>
             <div className="infoinput_under">
-              <input value={star} onChange={onSetStar} required />
+              <input value={star} onChange={onSetStar} />
               <span>별 개수</span>
             </div>
           </div>
           <div className="infoinput">
             <div className="infoinput_under">
-              <input value={type} onChange={onSetType} required />
+              <input value={type} onChange={onSetType} />
               <span>업종</span>
             </div>
             <div className="infoinput_under">
-              <input value={tag} onChange={onSetTag} required />{" "}
-              <span>태그</span>
+              <input value={tag} onChange={onSetTag} /> <span>태그</span>
             </div>
           </div>
           <div className="infoinput">
             <div className="infoinput_under">
-              <input value={phoneNum} onChange={onSetPhoneNum} required />{" "}
+              <input value={phoneNum} onChange={onSetPhoneNum} />{" "}
               <span>전화번호</span>
             </div>
             <div className="infoinput_under">
-              <input value={location} onChange={onSetLocation} required />{" "}
+              <input value={location} onChange={onSetLocation} />{" "}
               <span>위치</span>
             </div>
           </div>
           <div className="infoinput">
             <div className="infoinput_under">
-              <input value={weekday} onChange={onSetWeekday} required />{" "}
+              <input value={weekday} onChange={onSetWeekday} />{" "}
               <span>평일</span>
             </div>
             <div className="infoinput_under">
-              <input value={weekend} onChange={onSetWeekend} required />{" "}
+              <input value={weekend} onChange={onSetWeekend} />{" "}
               <span>주말</span>
             </div>
           </div>
 
           <div className="infoinput_under last">
-            <textarea
-              rows="8"
-              value={descrip}
-              onChange={onSetDescrip}
-              required
-            />
+            <textarea rows="8" value={descrip} onChange={onSetDescrip} />
             <span>설명</span>
           </div>
 
           {/* <button type="primary" htmlType="submit"> */}
-          <button type="submit" onClick={onSubmit}>
-            send
-          </button>
+          <button /*type="submit" onClick={onSubmit}*/>send</button>
         </div>
         <div className="showimgwrap">
           <input
@@ -168,13 +160,17 @@ const Upload = (props) => {
             multiple
             ref={imageInput}
             hidden
-            onChange={onChangeImage}
+            // onChange={onChangeImage}
           />
           <button onClick={onClickImageInput}>이미지 등록</button>
-          <div onClick={removeImage}>
+          <div /*onClick={removeImage}*/>
             {imagePaths.map((v, i) => (
               <div key={i}>
-                <img src={`https://api.michelinseoul.xyz/${v}`} alt="img" />
+                <img
+                  src={`https://api.michelinseoul.xyz/${v}`}
+                  alt="img"
+                  crossorigin="use-credentials"
+                />
               </div>
             ))}
           </div>
