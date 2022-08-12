@@ -1,4 +1,4 @@
-<h1>Michelin_2020_renwer</h1>
+<h1>Michelin_Seoul</h1>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36911316/117452900-4481d980-af7f-11eb-81c5-f43f44bb5af5.png">  
@@ -12,10 +12,10 @@
 
 
 
-  https://baeportfolio.xyz/#moveproject<br> 해당 사이트에서 데모사이트로 이동할수 있습니다.
+  https://michelinseoul.xyz<br> 해당 사이트에서 데모사이트로 이동할수 있습니다.
 
-  <h2>:memo: Michelin_2020_renwer 서비스 소개</h2>
-  <h3>2020년 서울 미슐랭 1~3스타 레스토랑 소개 사이트 입니다.</h3>
+  <h2>:memo: Michelin_Seoul 서비스 소개</h2>
+  <h3>서울 미슐랭 1~3스타 레스토랑 소개 사이트 입니다.</h3>
   <h3>🔍 검색기능</h3>
   <blockquote>
     <ul>
@@ -32,7 +32,7 @@
       <li><h4>1. 기본설정</h4></li>
       <blockquote>
         <li>1-1. 설치하고자 하는 컴퓨터에 git, node, mysql이 설치되어 있어야 합니다.</li>
-        <li>1-2. 터미널에서 설치하고자 하는 폴더에  git clone https://github.com/dongbae129/Michelin_2020_renwer.git 입력.</li>
+        <li>1-2. 터미널에서 설치하고자 하는 폴더에  git clone https://github.com/dongbae129/Michelin_Seoul.git 입력.</li>
         <li>1-3. back, fornt 폴더에서 각각 터미널에 npm i 명령어로 모듈 설치(front는 설치시간이 꽤 걸립니다).</li>
       </blockquote>
       <li><h4>2. back폴더 설정</h4></li>
