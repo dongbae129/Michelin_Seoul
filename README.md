@@ -12,7 +12,8 @@
 
 
 
-  https://michelinseoul.xyz<br> 해당 사이트에서 데모사이트로 이동할수 있습니다.
+  <del>https://michelinseoul.xyz</del><br> <del>해당 사이트에서 데모사이트로 이동할수 있습니다.</del>
+  <p>도메인 문제로 인하여 운영을 중단하였습니다</p>
 
   <h2>:memo: Michelin_Seoul 서비스 소개</h2>
   <h3>서울 미슐랭 1~3스타 레스토랑 소개 사이트 입니다.</h3>
